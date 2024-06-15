@@ -7,7 +7,7 @@ from ollama import Client
 class Pipeline:
     def __init__(self):
         headers = {"authorization": f"Bearer {environ.get('OLLAMA_API_KEY')}"}
-        self.client = Client(api_key=environ.get("GROQ_API_KEY"), headers=headers)
+        self.client = Client(headers=headers)
 
     async def on_startup(self):
         pass
