@@ -7,7 +7,7 @@ from ollama import Client
 class Pipeline:
     def __init__(self):
         headers = {"authorization": f"Bearer {environ.get('OLLAMA_API_KEY')}"}
-        self.client = Client(headers=headers)
+        self.client = Client(headers=headers, host=environ.get("OLLAMA_HOST"))
 
     async def on_startup(self):
         pass
