@@ -23,4 +23,5 @@ class Pipeline:
             messages=messages,
             stream=True,
         )
-        return response
+        for chunk in response:
+            yield chunk["message"]["content"]
